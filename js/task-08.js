@@ -12,14 +12,24 @@
 // Каждый следующий div после первого, должен быть шире и выше предыдущего на 10px
 // Создай функцию destroyBoxes(), которая очищает div#boxes.
 
-const amount = document.getElement('input');
-const renderButton = document.getElement('render');
-const destroyButton = document.getElement('destroy');
-
+const amount = document.querySelector('input');
+const renderButton = document.querySelector('[data-action="render"]');
+const destroyButton = document.querySelector('[data-action="destroy"]');
+const boxes = document.getElementById('boxes');
 // Додати прослухування при натискані кнопки
-const createBoxes = function(amount) {
+// const createBoxes = function(amount) {
+// };
+// const createBoxes = function() {
+//     amount = 0;
+// };
 
-};
-const createBoxes = function() {
-    amount = 0;
-};
+renderButton.addEventListener('click', () => {
+    for (let i=0; i<amount.value; i+=1) {    
+        const divEl = document.createElement('div');
+        boxes.append(divEl);
+    }});
+destroyButton.addEventListener('click', () => {
+    for (let i=0; i<amount.value; i+=1) {
+        if (boxes.hasChildNodes()) {
+        boxes.removeChild(boxes.lastChild)}
+}});
