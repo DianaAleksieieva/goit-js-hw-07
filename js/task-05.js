@@ -5,6 +5,12 @@
 const inputEl = document.getElementById('name-input');
 const outputEl = document.getElementById('name-output');
 
-inputEl.addEventListener('keypress', () => {
-    outputEl.textContent = inputEl.value;
-});
+
+    inputEl.addEventListener('keydown', a => {
+        outputEl.textContent = inputEl.value;
+       if (inputEl.value === "") {
+        outputEl.textContent ='незнакомец';
+        };
+        });
+        if (inputEl.value.keyCode == 8 ) {
+            console.log('dell')};
