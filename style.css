@@ -1,0 +1,36 @@
+/* task6 */
+
+.validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+.valid {
+  border-color: #4caf50;
+}
+
+.invalid {
+  border-color: #f44336;
+}
+
+/* Задача 3 */
+ul#gallery {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.img-style {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.img-tube {
+  width: 400px;
+  height: 400px;
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.gallery-item {
+  margin-right: 20px;
+  list-style: none;
+}

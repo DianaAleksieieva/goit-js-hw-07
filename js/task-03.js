@@ -22,19 +22,17 @@ const images = [
 ];
 const galeryListEl = document.querySelector('#gallery');
 
-const galeryItem = images.map(image => {
-    // Создаем картинки с атрибутами
-    const imgEl = document.createElement('img');
-    imgEl.setAttribute("alt", image.alt);
-    imgEl.setAttribute("url", image.url);
-    // Создаем елементы списка и добавляем изображения:
-    const li = document.createElement('li');
-    li.append(imgEl)
-    return li
-});
-galeryItem.style.display = 'flex';
-galeryItem.style.margin = '20px';
 
-galeryListEl.insertAdjacentHTML('afterbegin', ...galeryItem);
-console.log(...galeryItem)
+const imgArray = [];
 
+
+for (let i = 0; i < images.length; i += 1) {
+  const { alt, url } = images[i];
+  let image = (`<li class="gallery-item"><div class="img-tube"><img class="img-style" src='${url}' alt='${alt}' width="300" max-higth="300" > </img></li>`);
+  imgArray.push(image);
+}
+console.log(...imgArray);
+galeryListEl.insertAdjacentHTML('afterbegin', imgArray);
+
+// console.log(galeryListEl)
+ 
