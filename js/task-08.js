@@ -22,14 +22,21 @@ const boxes = document.getElementById('boxes');
 // const createBoxes = function() {
 //     amount = 0;
 // };
-
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+let size = 30;
 renderButton.addEventListener('click', () => {
     for (let i=0; i<amount.value; i+=1) {    
         const divEl = document.createElement('div');
-        boxes.append(divEl);
-    }});
+        divEl.classList.backgroundcolor = boxes.append(divEl);
+        divEl.style.backgroundColor = 'rgb(' + getRandomInt(0, 255) + ', ' + getRandomInt(0, 255) + ', ' + getRandomInt(0, 255) + ')';
+        size += 10;
+        divEl.style.width = `${size}px`;
+        divEl.style.height = `${size}px`;
+        console.log(size)
+  };
+    });
 destroyButton.addEventListener('click', () => {
-    for (let i=0; i<amount.value; i+=1) {
-        if (boxes.hasChildNodes()) {
-        boxes.removeChild(boxes.lastChild)}
-}});
+    boxes.innerHTML = '';
+});
